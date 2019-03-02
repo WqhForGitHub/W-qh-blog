@@ -7,6 +7,6 @@ export const statusCode = {
 export const apiURL = {
   PAGE: `${SERVER}`,
   BLOGLIST: `${SERVER}/find`,
-  PERSONALINFO: `${SERVER}/PerosnalInfo`
-
+  PERSONALINFO: `${SERVER}/PerosnalInfo`,
+  MODIFYBLOG: `${SERVER}/update`
 }

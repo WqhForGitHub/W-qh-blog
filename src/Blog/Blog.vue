@@ -1,24 +1,26 @@
 <template>
   <div class="Blog">
     <!--菜单栏-->
-    <el-menu id="menu"  class="el-menu-demo" mode="horizontal">
-      <el-menu-item index="1" style="" class="menuFirstitem">
-        <i id="Homeiconfont" class="iconfont icon-shouye_xuanzhong"></i>
-        <span class="Hometext" style="">首页</span>
-      </el-menu-item>
-      <el-menu-item index="2" class="menuSeconditem">
-        <i class="iconfont icon-fenlei" id="kindiconfont"></i>
-        <span style="font-size:16px;margin-left:5px;" class="Kindtext">分类</span>
-      </el-menu-item>
-      <el-menu-item index="3" class="menuThirditem">
-        <i id="labeliconfont" class="iconfont icon-biaoqian"></i>
-        <span style="font-size:16px;margin-left:5px;" class="labeltext">标签</span>
-      </el-menu-item>
-      <el-menu-item index="4" class="menuForthitem">
-        <i class="iconfont icon-renwu-username" id="Abouticonfont"></i>
-        <span style="font-size:16px;margin-left:5px;" class="Abouttext">关于</span>
-      </el-menu-item>
-    </el-menu>
+    <header>
+      <el-menu id="menu"  class="el-menu-demo" mode="horizontal">
+        <el-menu-item index="1" style="" class="menuFirstitem">
+          <i id="Homeiconfont" class="iconfont icon-shouye_xuanzhong"></i>
+          <span class="Hometext" style="">首页</span>
+        </el-menu-item>
+        <el-menu-item index="2" class="menuSeconditem">
+          <i class="iconfont icon-fenlei" id="kindiconfont"></i>
+          <span style="font-size:16px;margin-left:5px;" class="Kindtext">分类</span>
+        </el-menu-item>
+        <el-menu-item index="3" class="menuThirditem">
+          <i id="labeliconfont" class="iconfont icon-biaoqian"></i>
+          <span style="font-size:16px;margin-left:5px;" class="labeltext">标签</span>
+        </el-menu-item>
+        <el-menu-item index="4" class="menuForthitem">
+          <i class="iconfont icon-renwu-username" id="Abouticonfont"></i>
+          <span style="font-size:16px;margin-left:5px;" class="Abouttext">关于</span>
+        </el-menu-item>
+      </el-menu>
+    </header>
     <!--博客内容详情-->
     <Blogcontent @close="closeBlogcontent" class="BlogDetailcontent" v-show="flagBlogDetailcontent === true"></Blogcontent>
     <div class="generationlayout">
@@ -129,8 +131,8 @@
 <script>
 import Blogcontent from '../Blogcontent/Blogcontent.vue'
 import Blogcatalog from '../Blogcatalog/Blogcatalog.vue'
-import {getPersonalInfo, changePage, getbloglist} from '../api/index'
-import {statusCode} from '../api/api.cfg'
+import { getPersonalInfo, changePage, getbloglist, modifyblog } from '../api/index'
+import { statusCode } from '../api/api.cfg'
 export default {
   components:{
     Blogcontent,
@@ -167,6 +169,7 @@ export default {
         pageSize:5
       })
       console.log(res)
+      window.scrollTo(0,0); // 回到顶部
       this.getbloglist();
     },
     // 获取个人信息
@@ -178,8 +181,24 @@ export default {
 
       }
     },
+    // 更改浏览数
+    async updatewatchnum(index) {
+      let modifyitem;
+      this.$store.state.bloglist.forEach((item, indexone) => {
+        if (index == indexone) {
+          item.watchnum++;
+          modifyitem = item;
+        }
+      })
+      // 提交到数据库
+      const res = await modifyblog({
+        methods:'update',
+        id:modifyitem._id,
+        watchnum:modifyitem.watchnum
+      })
+    },
     // 查看博客具体详情
-    showBlogDetail(index) {
+     showBlogDetail(index) {
       let blogcontent;
       this.$store.state.bloglist.forEach((item, indexone) => {
         if(index == indexone) {
@@ -193,6 +212,8 @@ export default {
         blogcontent:blogcontent
       })
       this.flagBlogDetailcontent = !this.flagBlogDetailcontent
+      // 更改浏览数
+      this.updatewatchnum(index)
     },
     // 关闭博客详情
     closeBlogcontent(close) {
