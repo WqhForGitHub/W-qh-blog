@@ -45,11 +45,11 @@
 
 **首页**
 
-![博客首页](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/Home.png?q-sign-algorithm=sha1&q-ak=AKID4ojBT1wr0YmbqKo0kL6aFAhQD6WlBIuo&q-sign-time=1551696629;1551698429&q-key-time=1551696629;1551698429&q-header-list=&q-url-param-list=&q-signature=f2c3cda841858e4813b6f8d24ff7b682919995e7&x-cos-security-token=d607f0cdfce041d1da41a70accce352e13ad48db10001)
+![博客首页](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/Home.png)
 
 **博客详情页**
 
-![博客详情页](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/blogcontent.png?q-sign-algorithm=sha1&q-ak=AKIDpHli9H78WKOCM9FymZrjOVJrP6MmDMgO&q-sign-time=1551697539;1551699339&q-key-time=1551697539;1551699339&q-header-list=&q-url-param-list=&q-signature=5c2210abd5224033d2c1f17a5543dfd254e7a634&x-cos-security-token=599285745f09f5877505f7a4d0acae62fd0c1aa010001)
+![博客详情页](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/blogcontent.png)
 
 ## 项目总结
 
