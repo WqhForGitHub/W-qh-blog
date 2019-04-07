@@ -6,15 +6,15 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: (resolve) => require(['../Blog/Blog.vue'], resolve)
+      component: (resolve) => require(['../view/Blog.vue'], resolve)
     },
     {
       path: '/Blogcontent',
-      component: (resolve) => require(['../Blogcontent/Blogcontent.vue'], resolve)
+      component: (resolve) => require(['../view/Blogcontent.vue'], resolve)
     },
     {
       path: '/Blogcatalog',
-      component: (resolve) => require(['../Blogcatalog/Blogcatalog.vue'], resolve)
+      component: (resolve) => require(['../view/Blogcatalog.vue'], resolve)
     }
   ]
 })

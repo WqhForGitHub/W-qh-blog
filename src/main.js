@@ -11,8 +11,8 @@ import '../iconfont/iconfont'
 import 'lib-flexible'
 import 'element-ui/lib/theme-chalk/display.css'
 import 'highlight.js/styles/googlecode.css'
-import './highlight/styles/a11y-dark.css'
-// import './css/typeo.css'
+import './highlight/styles/github.css'
+
 Vue.directive('highlight', (el) => {
   let blocks = el.querySelectorAll('pre code')
   blocks.forEach((block) => {
