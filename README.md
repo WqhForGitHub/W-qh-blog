@@ -53,9 +53,6 @@
 **内容**
 ![内容](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/content.png)
 
-**结论**
-![结论](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/conclusion.png)
-
 ## 项目总结
 
 接下来我大致介绍下我在做博客项目时的一些经历和体会。
