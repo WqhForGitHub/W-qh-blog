@@ -47,10 +47,13 @@
 
 ![博客首页](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/Home.png)
 
-**博客详情页**
-
+**标题**
 ![标题](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/title.png)
+
+**内容**
 ![内容](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/content.png)
+
+**结论**
 ![结论](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/conclusion.png)
 
 ## 项目总结
