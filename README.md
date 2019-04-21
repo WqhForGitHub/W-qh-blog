@@ -47,11 +47,8 @@
 
 ![博客首页](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/Home.png)
 
-**标题**
-![标题](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/title.png)
-
-**内容**
-![内容](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/content.png)
+**博客内容**
+![博客内容](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/blogcontent.png)
 
 ## 项目总结
 
