@@ -45,7 +45,7 @@
 
 **首页**
 
-![博客首页](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/Home.png)
+![博客首页](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/blogList.png)
 
 **博客内容**
 ![博客内容](https://w-qh-1257950569.cos.ap-guangzhou.myqcloud.com/Blog/blogcontent.png)
