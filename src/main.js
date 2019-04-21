@@ -10,8 +10,12 @@ import 'iview/dist/styles/iview.css'
 import '../iconfont/iconfont'
 import 'lib-flexible'
 import 'element-ui/lib/theme-chalk/display.css'
+import 'github-markdown-css'
 import 'highlight.js/styles/googlecode.css'
 import './highlight/styles/github.css'
+import { BackTop } from 'ant-design-vue'
+
+Vue.use(BackTop)
 
 Vue.directive('highlight', (el) => {
   let blocks = el.querySelectorAll('pre code')

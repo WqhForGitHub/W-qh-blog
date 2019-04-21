@@ -45,7 +45,7 @@
           <p>{{$store.state.blogcontent.briefcontent}}</p>
         </div>
         <!--博客具体内容-->
-        <div class="BlogDetailcontent" v-html="$store.state.blogcontent.blogcontent" v-highlight>
+        <div class="markdown-body"  v-html="$store.state.blogcontent.blogcontent" v-highlight>
           {{$store.state.blogcontent.blogcontent}}
         </div>
     </el-card>
@@ -76,7 +76,8 @@ export default {
     width:820px;
     min-height:921px;
     height:auto;
-    margin-top:2.8%;
+    margin-top:2%;
+    margin-left:-1%;
     .title {
       width:100%;
       height:55px;
@@ -98,18 +99,18 @@ export default {
       }
     }
     .iconset {
-      width:95%;
+      width:78%;
       height:23px;
       display: flex;
       flex-wrap: wrap;
       margin:0 auto;
       .time {
-        width:13.5%;
+        width:80px;
         height:100%;
         display: flex;
         .timeicon {
           width:28px;
-          height:18px;
+          height:20px;
           img {
             width:100%;
             height:100%;
@@ -122,13 +123,13 @@ export default {
         }
       }
       .watch {
-        width:5.5%;
+        width:60px;
         height:100%;
         margin-left:5%;
         display: flex;
         .watchicon {
-          width:57%;
-          height:79%;
+          width:20px;
+          height:81%;
           img {
             width:100%;
             height:100%; 
@@ -209,16 +210,18 @@ export default {
       margin:3.2% auto;
       font-family: 'PingFang SC';
     }
-    .BlogDetailcontent {
-      width:98%;
-      min-height:400px;
-      height:auto;
-      font-size:17px;
-      line-height:33px;
-      margin:3% auto;
-      word-wrap: break-word; 
-      word-break:normal;
-      font-family: 'PingFang SC';
+    .markdown-body {
+      // width:98%;
+      // min-height:400px;
+      // height:auto;
+      // font-size:17px;
+      // line-height:33px;
+      // margin:3% auto;
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0px;
     }
   }
 }
