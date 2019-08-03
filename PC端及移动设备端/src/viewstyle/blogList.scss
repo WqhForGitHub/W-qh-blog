@@ -1,0 +1,81 @@
+.blogListCard {
+  height: 165px;
+  margin-top: 20px;
+  cursor: pointer;
+  .blogtitle {
+    width: 100%;
+    height: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .briefContent {
+    width: 100%;
+    height: 67px;
+    font-size: 14px;
+    color: gray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    padding-top: 5px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  .iconGroup {
+    width: 100%;
+    height: 20px;
+    margin-top: 15px;
+    display: flex;
+    .publishTime {
+      width: 100px;
+      height: 100%;
+      display: flex;
+      p {
+        margin-left: 5px;
+        line-height: 19px;
+        font-size: 12px;
+      }
+    }
+    .watchNum {
+      width: 80px;
+      height: 100%;
+      display: flex;
+      margin-left: 20px;
+      p {
+        margin-left: 5px;
+        line-height: 19px;
+        font-size: 12px;
+      }
+    }
+    .label {
+      min-width: 80px;
+      width: auto;
+      height: 100%;
+      display: flex;
+      margin-left: 20px;
+      .labelArray {
+        min-width: 20px;
+        width: auto;
+        .labelName {
+          margin: -2px 10px;
+        }
+      }
+    }
+    .fileType {
+      min-width: 80px;
+      width: auto;
+      height: 100%;
+      display: flex;
+      margin-left: 20px;
+      .fileTypeArray {
+        min-width: 20px;
+        width: auto;
+        .fileLabelName {
+          margin: -2px 10px;
+        }
+      }
+    }
+  }
+}

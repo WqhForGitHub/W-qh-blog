@@ -1,0 +1,81 @@
+.blogContent {
+  width: 90%;
+  height: 400px;
+  min-height: 600px;
+  height: auto;
+  .blogContentTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .closeIcon {
+    width: 50px;
+    height: 50px;
+    // background: #000;
+    display: flex;
+    float: right;
+    margin-top: -44px;
+    cursor: pointer;
+  }
+  .contentIconGroup {
+    width: 100%;
+    height: 40px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    .contentTime {
+      width: 120px;
+      height: 100%;
+      display: flex;
+      p {
+        margin-left: 5px;
+        line-height: 18px;
+      }
+    }
+    .contentWatchNum {
+      width: 100px;
+      height: 100%;
+      display: flex;
+      p {
+        margin-left: 5px;
+        line-height: 18px;
+      }
+    }
+    .contentLabel {
+      min-width: 100px;
+      width: auto;
+      height: 100%;
+      display: flex;
+      .contLabelArray {
+        min-width: 20px;
+        width: auto;
+        .contLabelName {
+          margin: -3px 10px;
+        }
+      }
+    }
+    .contentFileType {
+      min-width: 100px;
+      width: auto;
+      height: 100%;
+      display: flex;
+      margin-left: 30px;
+      .contFileArray {
+        min-width: 20px;
+        width: auto;
+        .contFileName {
+          margin: -3px 10px;
+        }
+      }
+    }
+  }
+  .markdown-body {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+}
