@@ -1,113 +1,34 @@
-# 博客前台
+# Vue 3 + TypeScript + Vite
 
-项目地址: [https://github.com/WqhForGitHub/W-qh-blog](https://github.com/WqhForGitHub/W-qh-blog)
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-如果你觉得项目不错的话，欢迎点击'star'鼓励支持下，万分感谢。(๑*◡*๑)   
+## Recommended IDE Setup
 
-## 前言
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-以前我们是用hexo + next来搭建自己的博客，但最近学习了Vue之后，我被它的数据驱动和组件化思想所吸引。所以就用了Vue搭建了一个自己的个人博客。Vue实际上对应着MVVM模式下的View图层，要搭建一个完整的应用仅仅只有Vue是不够的，我们还需要结合数据状态管理vuex、路由vue-router等等
+## Type Support For `.vue` Imports in TS
 
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+
+1. Disable the built-in TypeScript Extension
+   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+# 博客
 ## 技术栈
 
-### 前端
+- 前端技术栈：Vue3 + TypeScript + Pinia + Vite
+- 后端技术栈：express + mongoDB
 
-* vue
-* axios: 异步请求库
-* vuex：管理这个应用数据
-* vue-router：前端路由
-* Element/Iview：桌面端组件库   
+## 主要功能
 
-### 后端
+- [x] 登录
+- [x] 注册
+- [x] 博客首页展示
+- [x] 博客增删查改
+- [x] 博客分页
+- [ ] 博客 markdown 显示
 
-* koa
-
-  博客的后端是使用Node.js开发的，基于koa的Web框架，完美实现前后端的分离，后端只需要负责提供接口数据，而路由的跳转、数据渲染都是由前端实现的。
-
-  项目地址:[https://github.com/WqhForGitHub/W-qh-server](https://github.com/WqhForGitHub/W-qh-server)
-
-### 实现的功能
-
-- [x] 博客首页列表展示
-- [x] 博客个人信息
-- [x] 博客目录
-- [x] 博客内容markdown格式
-- [x] 博客的分类和标签
-- [x] 代码高亮显示
-- [x] 返回顶部
-
-### TODO
-
-- [ ] 分类页面
-- [ ] 标签页面
-- [ ] markdown编辑器
-- [ ] 界面的优化
-- [ ] 响应式设计
-
-## 博客预览
-
-**首页**
-
-![博客首页](https://user-gold-cdn.xitu.io/2019/8/3/16c55a897932cae5?w=1876&h=1347&f=jpeg&s=406945)
-
-**博客内容及目录**
-![博客内容及目录](https://user-gold-cdn.xitu.io/2019/8/3/16c55a909ef638f0?w=1920&h=903&f=jpeg&s=237511)
-**markdown展示**
-![markdown展示](https://user-gold-cdn.xitu.io/2019/8/3/16c55aa686e4ea72?w=1920&h=903&f=jpeg&s=297440)
-**代码高亮**
-![代码高亮](https://user-gold-cdn.xitu.io/2019/8/3/16c55aa3615ae300?w=1920&h=903&f=jpeg&s=190258)
-
-
-## 项目总结
-
-接下来我大致介绍下我在做博客项目时的一些经历和体会。
-
-#### 前端路由
-
-前端发展可谓是很快的，以前用express搭建后台服务的时候，我们知道有后端路由的概念。根据请求路径的不用我们就返回不同的页面数据。而我们学习并使用了前端路由的时候我们发现其实原理是相类似的，就是当页面刷新的时候，不会发起URL的请求，它只是根据不同URL去渲染不同的组件。
-
-```vue
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      component: (resolve) => require(['../Blog/Blog.vue'], resolve)
-    },
-    {
-      path: '/Blogcontent',
-      component: (resolve) => require(['../Blogcontent/Blogcontent.vue'], resolve)
-    },
-    {
-      path: '/Blogcatalog',
-      component: (resolve) => require(['../Blogcatalog/Blogcatalog.vue'], resolve)
-    }
-  ]
-})
-```
-
-上面的代码就是所使用的前端路由vue-router，它是根据不同的路由来渲染不同的组件。
-
-#### 如何管理应用数据
-
-虽然bus已经很好的帮你解决了跨组件需求，但是它在数据管理、维护、架构设计上还只是个简单的组件，而`Vuex`却能更优雅和高效地完成状态管理。
-
-```vue
-const store = new Vuex.Store({
-  state: {
-    bloglist: [],
-    blogcontent: {}
-  },
-  mutations: {
-    setbloglist (state, params) {
-      state.bloglist = params.bloglists
-    },
-    setblogcontent (state, params) {
-      state.blogcontent = params.blogcontent
-    }
-  }
-})
-```
-
-`store`包含了应用的数据（状态）和操作过程。Vuex的数据都是响应式的，任何组件使用同一`store`的时候，只要`store`发生变化，对应的组件就会立即更新。
-
-在组件内，来自`store`的数据只能读取，不能手动改变，改变`store`中的数据的唯一途径就是显式地提交`mutations`
